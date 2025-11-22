@@ -1,7 +1,24 @@
 // Select elements
-const heroText = document.querySelector(".hero-text");
+const heroText = document.getElementById("heroText");
+const fullText = "Welcome to the most reliable software services provider, where your expectations become your reality.";
+let i = 0;
 const scrollMessage = document.getElementById("scrollMessage");
 const serviceCards = document.querySelectorAll(".service-card");
+// HEADER HIDE/SHOW ON SCROLL
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+
+if (header) {
+  document.addEventListener('mousemove', (e) => {
+    if (e.clientY < 30) {  // mouse near top
+      header.style.top = '0';
+    } else {
+      header.style.top = `-${header.offsetHeight}px`;
+    }
+  });
+}
+
 
 // 1️⃣ On load, fade in the hero text
 window.addEventListener("load", () => {
@@ -47,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+

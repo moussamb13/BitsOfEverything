@@ -13,17 +13,30 @@ body {
   background-color: #d7f5d1;
   scroll-padding-top: 120px; /* space for fixed header */
 }
-
-/* Header */
 header {
-  background-color: #3b8461; 
+  transition: transform 0.3s ease;
+}
+
+header {
+  background-color: #3b8461;
   color: #fff;
   padding: 1rem 0;
   position: fixed;
-  top: 0;
+  top: -100px;         /* hide it off-screen */
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(16, 166, 96, 0.2);
+  transition: top 0.3s ease-in-out;
+}
+
+/* Show header when hovering at the top of the page */
+body:hover header {
+  top: 0;
+}
+
+/* Optional: make header appear when mouse near top */
+body {
+  position: relative;
 }
 
 /* Center only the nav items */
@@ -342,26 +355,56 @@ footer p {
 .chat-body button:hover {
   background-color: #2f6d4f;
 }
+.projects {
+  padding: 6rem 2rem 4rem 2rem; /* added extra top padding to push cards below header */
+}
+
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* store-style grid */
   gap: 2rem;
+  padding: 2rem;
+  background-color: #f4f4f4;
 }
 
 .project-card {
-  background: #3b8461;
-  padding: 1.5rem;
-  color: #fff;
-  border-radius: 10px;
+  background: #9fdea6;              /* clothing stores use white product cards */
+  color: #333;
+  padding: 1rem;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* Add image placeholder style if needed */
+.project-card img {
+  width: 100%;
+  height: 200px;                 /* product-style image block */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #555;
+}
+
+/* Store-style hover effect */
+.project-card:hover {
+  transform: scale(1.04);     /* slight zoom like e-commerce */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
 
 .about-box {
   background: #3b8461;
@@ -412,4 +455,14 @@ footer p {
 
 .contact-card p {
   font-size: 1.1rem;
+}
+
+/* About Section */
+.about {
+  padding: 6rem 2rem 4rem 2rem; /* same top padding */
+}
+
+/* Contact Section */
+.contact {
+  padding: 6rem 2rem 4rem 2rem; /* same top padding */
 }
