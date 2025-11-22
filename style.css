@@ -466,3 +466,44 @@ footer p {
 .contact {
   padding: 6rem 2rem 4rem 2rem; /* same top padding */
 }
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+  
+  /* Fix hero background size on phones */
+  .hero {
+    background-size: 70%;
+    height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  /* Make header layout vertical */
+  header .container,
+  header .header-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Stack navigation links */
+  header nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Make project cards 1 per row on small screens */
+  .project-list {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  /* Resize cards for phones */
+  .project-card img {
+    height: 160px;
+  }
+
+  /* About + Contact margin fix */
+  .about,
+  .contact {
+    padding-top: 8rem;
+  }
+}
