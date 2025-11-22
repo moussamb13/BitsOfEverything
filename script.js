@@ -26,3 +26,24 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chatHeader = document.getElementById("chatHeader");
+  const chatBody = document.getElementById("chatBody");
+  const chatInput = document.getElementById("chatInput");
+  const chatSend = document.getElementById("chatSend");
+
+  chatHeader.addEventListener("click", () => {
+    chatBody.classList.toggle("show");
+  });
+
+  chatSend.addEventListener("click", () => {
+    const message = chatInput.value.trim();
+    if (message) {
+      window.location.href = `mailto:moussamb1901@gmail.com?subject=Website%20Inquiry&body=${encodeURIComponent(message)}`;
+      chatInput.value = "";
+      alert("Message ready to send! Your email client will open.");
+    }
+  });
+});
