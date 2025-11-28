@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Application Service - Byts of Everything</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .custom-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .custom-button:hover {
+      background-color: #45a049;
+    }
+
+    .schedule-meeting {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #0073e6;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .schedule-meeting:hover {
+      background-color: #005bb5;
+    }
+
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="header-space"></div>
+  <div class="header-space"></div>
+
+  <!-- Web Application Form Section -->
+  <section class="service-form">
+    <div class="container">
+      <br>        </br>
+      <br>        </br>
+      <form action="/submit-web-application" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br>        </br>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required><br>        </br>
+
+        <label for="description">Application Description:</label>
+        <textarea id="description" name="description" rows="10" required></textarea><br>        </br>
+
+        <label for="deadline">Preferred Deadline:</label>
+        <input type="date" id="deadline" name="deadline"><br>        </br>
+
+        <button type="submit" class="custom-button">Submit</button>
+      </form>
+
+      <a href="https://calendly.com/moussamb1901/30min" class="schedule-meeting" target="_blank">Schedule an Online Meeting</a>
+    </div>
+  </section>
+  <br>        </br><br>        </br>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Byts of Everything. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
